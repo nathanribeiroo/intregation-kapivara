@@ -1,28 +1,11 @@
 import { Router } from 'express';
 
-import Pipedrive from '@modules/opportunities/infra/axios/Pipedrive';
-import SyncOpportunitiesServices from '@modules/opportunities/services/SyncOpportunitiesService';
+import OpportunitiesController from '../controllers/OpportunitiesController';
 
 const opportunitiesRouter = Router();
+const opportunitiesController = new OpportunitiesController();
 
-opportunitiesRouter.get('/sync', async (resquest, response) => {
-    const pipedrive = new Pipedrive();
-
-    const data = await pipedrive.dealsWon();
-
-    if (!data) {
-        return response.status(404).json({
-            message:
-                'Não foi encontrado oportunidades no pipedrive com status igual a ganho',
-        });
-    }
-
-    const a = new SyncOpportunitiesServices();
-
-    const res = await a.execute(data);
-
-    return response.json(res);
-});
+opportunitiesRouter.get('/sync', opportunitiesController.sync);
 
 opportunitiesRouter.post('/', async (request, response) => {
     return response.json({});
