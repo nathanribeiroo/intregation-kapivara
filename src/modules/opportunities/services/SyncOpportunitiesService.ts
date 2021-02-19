@@ -12,9 +12,9 @@ export default class SyncOpportunitiesServices {
 
     public async execute(
         deals: IDealsOpportunitiesDTO[],
-    ): Promise<(IOrdersOpportunitiesDTO | undefined)[]> {
+    ): Promise<IOrdersOpportunitiesDTO[]> {
         return new Promise(resolve => {
-            const arrDeals: (IOrdersOpportunitiesDTO | undefined)[] = [];
+            const arrDeals: IOrdersOpportunitiesDTO[] = [];
 
             deals.map(async (deal, index) => {
                 const xmlObject = toXml.execute(deal);

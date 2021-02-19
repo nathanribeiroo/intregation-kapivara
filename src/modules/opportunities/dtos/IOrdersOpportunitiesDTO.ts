@@ -1,6 +1,6 @@
 export default interface IOrdersOpportunitiesDTO {
-    numeros: string;
-    idPedidos: number;
+    numero: string;
+    idPedido: number;
     value: number;
     orgName: string;
 }
