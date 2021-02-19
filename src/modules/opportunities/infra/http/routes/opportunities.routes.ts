@@ -7,8 +7,6 @@ const opportunitiesController = new OpportunitiesController();
 
 opportunitiesRouter.get('/sync', opportunitiesController.sync);
 
-opportunitiesRouter.post('/', async (request, response) => {
-    return response.json({});
-});
+opportunitiesRouter.get('/', opportunitiesController.index);
 
 export default opportunitiesRouter;
