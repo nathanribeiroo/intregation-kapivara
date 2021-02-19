@@ -1,7 +1,9 @@
 import IOrdersOpportunitiesDTO from '@modules/opportunities/dtos/IOrdersOpportunitiesDTO';
+import IOrdersRepository from '@modules/opportunities/repositories/IOrdersRepository';
+
 import Order from '../entities/Order';
 
-export default class OrdersRepository {
+export default class OrdersRepository implements IOrdersRepository {
     public async createOrder(
         orders: IOrdersOpportunitiesDTO[],
     ): Promise<IOrdersOpportunitiesDTO[]> {
