@@ -1,11 +1,11 @@
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 
 import IDealsOpportunitiesDTO from '@modules/opportunities/dtos/IDealsOpportunitiesDTO';
 
 import configs from '@config/pipedriveConfig';
 
 export default class Pipedrive {
-    private api;
+    private api: AxiosInstance;
 
     constructor() {
         this.api = axios.create({

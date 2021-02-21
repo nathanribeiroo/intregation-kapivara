@@ -1,10 +1,10 @@
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 
 import configs from '@config/blingConfig';
 import IOrdersOpportunitiesDTO from '@modules/opportunities/dtos/IOrdersOpportunitiesDTO';
 
 export default class Bling {
-    private api;
+    private api: AxiosInstance;
 
     constructor() {
         this.api = axios.create({

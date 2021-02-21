@@ -1,0 +1,10 @@
+node_modules
+.git
+.gitignore
+README.md
+LICENSE
+.vscode
+.editorconfig
+.eslintignore
+.eslintrc.json
+prettier.config.js

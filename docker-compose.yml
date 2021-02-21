@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+    kapivara:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        image: nathanribeiroo/kapivara
+        container_name: kapivara
+        command: yarn start
+        ports:
+            - 3333:3333
+        volumes:
+            - .:/var/www
